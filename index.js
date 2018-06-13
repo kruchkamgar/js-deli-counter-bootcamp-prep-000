@@ -1,15 +1,13 @@
 var katzDeli = [];
+var ticketNumber = 1;
 
-function takeANumber (deliLine, newName) {
-  
-  deliLine.push(newName);
-  return `Welcome, ${newName}. You are number ${deliLine.indexOf(newName) + 1} in line.`;
+function takeANumber (deliLine) {
+  deliLine.push(ticketNumber);
+  return `Welcome, you hold ticket number ${ticketNumber++}.`;
 }
 
 function nowServing (deliLine) {
-  let firstPerson = deliLine[0];
-  deliLine.shift();
-  return (deliLine.length > 0) ? `Currently serving ${firstPerson}.` : "There is nobody waiting to be served!";
+  return (deliLine.length > 0) ? `Currently serving ${deliLine.shift()}.` : "There is nobody waiting to be served!";
 }
 
 
